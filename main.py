@@ -1,11 +1,12 @@
-import utils
+from game import Game
 
 cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+game = Game()
 
 print("Welcome to Blackjack!")
 
-computer_cards = utils.getRandomCards(cards)
-player_cards = utils.getRandomCards(cards)
+computer_cards = game.getRandomCards(cards)
+player_cards = game.getRandomCards(cards)
 
 print(f'Computer cards [*, {computer_cards[1]}]')
 
@@ -17,7 +18,7 @@ while True:
         break
     
     if choose == 'hit':
-        player_cards.append(utils.getCard(cards))
+        player_cards.append(game.getCard(cards))
 
     if sum(player_cards) > 21:
         print(player_cards)
